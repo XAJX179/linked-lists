@@ -12,3 +12,11 @@ list.append('node4')
 list.append('node5')
 
 pp list
+
+list.prepend('node6')
+list.prepend('node7')
+list.prepend('node8')
+list.prepend('node9')
+list.prepend('node10')
+
+pp list
