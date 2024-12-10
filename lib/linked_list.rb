@@ -6,4 +6,17 @@ class LinkedList
     @head = nil
     @tail = nil
   end
+
+  # appends value at the end of the list
+  def append(value)
+    node = Node.new(value)
+
+    if @head.nil?
+      @head = node
+      @tail = node
+    end
+
+    @tail.next = node
+    @tail = node
+  end
 end
