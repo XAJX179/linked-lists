@@ -13,3 +13,4 @@ Linked lists in ruby
 - at(index)
 - pop
 - contains?(value)
+- find(value)

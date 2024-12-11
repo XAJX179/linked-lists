@@ -73,11 +73,21 @@ class LinkedList
     @tail = before_tail
   end
 
+  # returns true if a node with given value exists in list else returns false.
   def contains?(value)
-    node = filter do |elem|
+    result = filter do |elem|
       elem[0].data == value
     end
-    # pp node
-    !node.empty?
+    # pp result
+    !result.empty?
+  end
+
+  # finds index of the node with data equals given value
+  def find(value)
+    result = filter do |elem|
+      elem[0].data == value
+    end
+    # pp result
+    result.empty? ? nil : result[0][1]
   end
 end

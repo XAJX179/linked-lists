@@ -47,3 +47,9 @@ pp 'contains? 6'
 pp list.contains?('node6')
 pp 'contains? 0'
 pp list.contains?('node0')
+
+pp 'find 6\'s index'
+pp list.find('node6')
+
+pp 'find 15\'s index'
+pp list.find('node15')
