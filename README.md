@@ -12,3 +12,4 @@ Linked lists in ruby
 - tail
 - at(index)
 - pop
+- contains?(value)

@@ -66,9 +66,18 @@ class LinkedList
     end[0][0] # second [0] is just to remove [] brackets from output
   end
 
+  # removes last element of the list
   def pop
     before_tail = at size - 2
     before_tail.next = nil
     @tail = before_tail
+  end
+
+  def contains?(value)
+    node = filter do |elem|
+      elem[0].data == value
+    end
+    # pp node
+    !node.empty?
   end
 end

@@ -42,3 +42,8 @@ list.pop
 pp list
 
 pp 'tail', list.tail
+
+pp 'contains? 6'
+pp list.contains?('node6')
+pp 'contains? 0'
+pp list.contains?('node0')
