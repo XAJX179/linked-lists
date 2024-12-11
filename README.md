@@ -24,3 +24,4 @@ Linked lists in ruby
 - contains?(value)
 - find(value)
 - to_s
+- insert_at(value,index)

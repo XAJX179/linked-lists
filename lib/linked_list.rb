@@ -110,6 +110,7 @@ class LinkedList
     string << '( nil )'
   end
 
+  # inserts node with given value at index
   def insert_at(value, index)
     list_size = size
     return 'only positive index' if index.negative? || index > list_size
@@ -120,13 +121,20 @@ class LinkedList
     elsif index == list_size - 1
       append(value)
     else
-      # current node at the index
-      current_node = at(index)
-      previous_node = at(index - 1)
-      # pp current_node
-      # pp previous_node
-      node.next = current_node
-      previous_node.next = node
+      insert(index, node)
     end
+  end
+
+  # insert_at's insert method for inserting node in between
+  # list with given index
+  def insert(index, node)
+    # current node at the index
+    current_node = at(index)
+    # previous node from the index
+    previous_node = at(index - 1)
+    # pp current_node
+    # pp previous_node
+    node.next = current_node
+    previous_node.next = node
   end
 end
