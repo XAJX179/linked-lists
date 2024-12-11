@@ -14,3 +14,4 @@ Linked lists in ruby
 - pop
 - contains?(value)
 - find(value)
+- to_s

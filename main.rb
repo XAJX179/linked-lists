@@ -53,3 +53,6 @@ pp list.find('node6')
 
 pp 'find 15\'s index'
 pp list.find('node15')
+
+pp 'to_s'
+puts list

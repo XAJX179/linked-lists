@@ -90,4 +90,14 @@ class LinkedList
     # pp result
     result.empty? ? nil : result[0][1]
   end
+
+  # prints list in a readable format
+  def to_s
+    string = String.new
+    each do |elem|
+      string << "( #{elem.data} )"
+      string << '->'
+    end
+    string << '( nil )'
+  end
 end
