@@ -4,4 +4,7 @@ Linked lists in ruby
 
 ## methods
 
-#append
+- append
+- prepend
+- each (including other enum methods)
+- size
