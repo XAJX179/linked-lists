@@ -11,7 +11,7 @@ list.append('node3')
 list.append('node4')
 list.append('node5')
 
-pp list
+pp 'append', list
 
 list.prepend('node6')
 list.prepend('node7')
@@ -19,14 +19,19 @@ list.prepend('node8')
 list.prepend('node9')
 list.prepend('node10')
 
-pp list
+pp 'prepend', list
 
+pp 'each'
 list.each { |e| puts e }
+
 # because of Include Enumerable
 x = list.map { |e| e.data == 'node7' || e.data == 'node3' }
-pp x
+pp 'map', x
 
-pp list.size
+pp 'size', list.size
 
-pp list.head
-pp list.tail
+pp 'head', list.head
+
+pp 'tail', list.tail
+
+pp 'list at index 5 : ', list.at(5)

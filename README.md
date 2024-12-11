@@ -10,3 +10,4 @@ Linked lists in ruby
 - size
 - head
 - tail
+- at(index)

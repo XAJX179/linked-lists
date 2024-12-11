@@ -43,9 +43,11 @@ class LinkedList
     return nil if @head.nil?
 
     pointer = @head
+    index = 0
     until pointer.nil?
-      yield(pointer)
+      yield(pointer, index)
       pointer = pointer.next
+      index += 1
     end
   end
 
@@ -53,5 +55,14 @@ class LinkedList
     size = 0
     each { size += 1 }
     size
+  end
+
+  # return node of the list at the given index start from 0
+  def at(index)
+    # uncomment the pp elem to see data structure returned by filter
+    filter do |elem|
+      # pp elem
+      elem[1] == index
+    end[0][0]
   end
 end
