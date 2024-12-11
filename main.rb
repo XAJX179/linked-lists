@@ -27,3 +27,6 @@ x = list.map { |e| e.data == 'node7' || e.data == 'node3' }
 pp x
 
 pp list.size
+
+pp list.head
+pp list.tail

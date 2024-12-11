@@ -2,6 +2,8 @@
 
 # class LinkedList for creating linked list with help of Node class's objects
 class LinkedList
+  attr_reader :head, :tail
+
   def initialize
     # head/start of the list
     @head = nil

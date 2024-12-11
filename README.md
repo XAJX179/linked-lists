@@ -8,3 +8,5 @@ Linked lists in ruby
 - prepend
 - each (including other enum methods)
 - size
+- head
+- tail
