@@ -76,10 +76,11 @@ class LinkedList
     if @head == @tail
       @head = nil
       @tail = nil
+    else
+      before_tail = at size - 2
+      before_tail.next = nil
+      @tail = before_tail
     end
-    before_tail = at size - 2
-    before_tail.next = nil
-    @tail = before_tail
   end
 
   # returns true if a node with given value exists in list else returns false.
