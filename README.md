@@ -25,3 +25,4 @@ Linked lists in ruby
 - find(value)
 - to_s
 - insert_at(value,index)
+- remove_at(index)
