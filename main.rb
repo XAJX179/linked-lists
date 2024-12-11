@@ -35,3 +35,10 @@ pp 'head', list.head
 pp 'tail', list.tail
 
 pp 'list at index 5 : ', list.at(5)
+
+pp 'pop'
+list.pop
+list.pop
+pp list
+
+pp 'tail', list.tail

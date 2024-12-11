@@ -63,6 +63,12 @@ class LinkedList
     filter do |elem|
       # pp elem
       elem[1] == index
-    end[0][0]
+    end[0][0] # second [0] is just to remove [] brackets from output
+  end
+
+  def pop
+    before_tail = at size - 2
+    before_tail.next = nil
+    @tail = before_tail
   end
 end

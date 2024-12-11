@@ -11,3 +11,4 @@ Linked lists in ruby
 - head
 - tail
 - at(index)
+- pop
