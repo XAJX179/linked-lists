@@ -20,3 +20,10 @@ list.prepend('node9')
 list.prepend('node10')
 
 pp list
+
+list.each { |e| puts e }
+# because of Include Enumerable
+x = list.map { |e| e.data == 'node7' || e.data == 'node3' }
+pp x
+
+pp list.size

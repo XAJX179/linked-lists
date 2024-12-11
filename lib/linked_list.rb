@@ -32,4 +32,24 @@ class LinkedList
     end
     @head = node
   end
+
+  # including this means every method that uses each to work is copied here
+  # and will become useful by using below modified each method
+  include Enumerable
+  # iterates over each node of the list and calls the block on it
+  def each
+    return nil if @head.nil?
+
+    pointer = @head
+    until pointer.nil?
+      yield(pointer)
+      pointer = pointer.next
+    end
+  end
+
+  def size
+    size = 0
+    each { size += 1 }
+    size
+  end
 end
