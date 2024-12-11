@@ -51,6 +51,7 @@ class LinkedList
     end
   end
 
+  # returns number of nodes in the list
   def size
     size = 0
     each { size += 1 }
@@ -59,6 +60,8 @@ class LinkedList
 
   # return node of the list at the given index start from 0
   def at(index)
+    return nil if index >= size || index.negative?
+
     # uncomment the pp elem to see data structure returned by filter
     filter do |elem|
       # pp elem
@@ -68,6 +71,12 @@ class LinkedList
 
   # removes last element of the list
   def pop
+    return nil if @head.nil?
+
+    if @head == @tail
+      @head = nil
+      @tail = nil
+    end
     before_tail = at size - 2
     before_tail.next = nil
     @tail = before_tail
@@ -100,4 +109,7 @@ class LinkedList
     end
     string << '( nil )'
   end
+
+  # def insert_at(value, index)
+  # end
 end

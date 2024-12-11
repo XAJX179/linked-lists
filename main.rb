@@ -56,3 +56,8 @@ pp list.find('node15')
 
 pp 'to_s'
 puts list
+
+# pp 'insert_at value:\'node5\',index:5'
+# list.insert_at 'node5', 5
+
+# pp list.at 10
