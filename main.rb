@@ -36,7 +36,7 @@ puts list
 
 # pp 'tail', list.tail
 
-# pp 'list at index 5 : ', list.at(5)
+# pp 'list at index 4 : ', list.at(4)
 
 # pp 'pop'
 # list.pop
@@ -45,13 +45,13 @@ puts list
 
 # pp 'tail', list.tail
 
-# pp 'contains? 6'
-# pp list.contains?('node6')
+pp 'contains? 5'
+pp list.contains?('node5')
 # pp 'contains? 0'
 # pp list.contains?('node0')
 
-# pp 'find 6\'s index'
-# pp list.find('node6')
+# pp 'find 5\'s index'
+# pp list.find('node5')
 
 # pp 'find 15\'s index'
 # pp list.find('node15')

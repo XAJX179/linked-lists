@@ -63,10 +63,8 @@ class LinkedList
     return nil if index >= size || index.negative?
 
     # uncomment the pp elem to see data structure returned by filter
-    filter do |elem|
-      # pp elem
-      elem[1] == index
-    end[0][0] # second [0] is just to remove [] brackets from output
+    node, _node_index = detect { |_node, node_index| node_index == index }
+    node
   end
 
   # removes last element of the list
@@ -85,29 +83,20 @@ class LinkedList
 
   # returns true if a node with given value exists in list else returns false.
   def contains?(value)
-    result = filter do |elem|
-      elem[0].data == value
-    end
-    # pp result
-    !result.empty?
+    _node, index = detect { |node, _node_index| node.data == value }
+    !!index
   end
 
   # finds index of the node with data equals given value
   def find(value)
-    result = filter do |elem|
-      elem[0].data == value
-    end
-    # pp result
-    result.empty? ? nil : result[0][1]
+    node, index = detect { |node, _node_index| node.data == value }
+    node.nil? ? nil : index
   end
 
   # prints list in a readable format
   def to_s
     string = String.new
-    each do |elem|
-      string << "( #{elem.data} )"
-      string << '->'
-    end
+    each { |elem| string << "( #{elem.data} )->" }
     string << '( nil )'
   end
 
