@@ -89,8 +89,8 @@ class LinkedList
 
   # finds index of the node with data equals given value
   def find(value)
-    node, index = detect { |node, _node_index| node.data == value }
-    node.nil? ? nil : index
+    _node, index = detect { |node, _node_index| node.data == value }
+    index
   end
 
   # prints list in a readable format
