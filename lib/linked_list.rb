@@ -124,6 +124,7 @@ class LinkedList
     @size += 1
   end
 
+  # removes element at a given index
   def remove_at(index)
     return nil if at(index).nil?
 
@@ -137,6 +138,7 @@ class LinkedList
     @size -= 1
   end
 
+  # used to remove any element between but not including head and tail
   def remove(index)
     previous_node = at(index - 1)
     next_node = at(index + 1)
