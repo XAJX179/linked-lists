@@ -2,13 +2,15 @@
 
 # class LinkedList for creating linked list with help of Node class's objects
 class LinkedList
-  attr_reader :head, :tail
+  attr_reader :head, :tail, :size
 
   def initialize
     # head/start of the list
     @head = nil
     # tail/end of the list
     @tail = nil
+    # total number of nodes in the list
+    @size = 0
   end
 
   # appends value at the end of the list
@@ -21,6 +23,7 @@ class LinkedList
       @tail.next = node
     end
     @tail = node
+    @size += 1
   end
 
   # prepends value at the top of the list
@@ -33,6 +36,7 @@ class LinkedList
       node.next = @head
     end
     @head = node
+    @size += 1
   end
 
   # including this means every method that uses each to work is copied here
@@ -51,18 +55,10 @@ class LinkedList
     end
   end
 
-  # returns number of nodes in the list
-  def size
-    size = 0
-    each { size += 1 }
-    size
-  end
-
   # return node of the list at the given index start from 0
   def at(index)
     return nil if index >= size || index.negative?
 
-    # uncomment the pp elem to see data structure returned by filter
     node, _node_index = detect { |_node, node_index| node_index == index }
     node
   end
@@ -79,18 +75,17 @@ class LinkedList
       before_tail.next = nil
       @tail = before_tail
     end
+    @size -= 1
   end
 
   # returns true if a node with given value exists in list else returns false.
   def contains?(value)
-    _node, index = detect { |node, _node_index| node.data == value }
-    !!index
+    any? { |node, _node_index| node.data == value }
   end
 
   # finds index of the node with data equals given value
   def find(value)
-    _node, index = detect { |node, _node_index| node.data == value }
-    index
+    find_index { |node, _node_index| node.data == value }
   end
 
   # prints list in a readable format
@@ -126,6 +121,7 @@ class LinkedList
     # pp previous_node
     node.next = current_node
     previous_node.next = node
+    @size += 1
   end
 
   def remove_at(index)
@@ -136,9 +132,14 @@ class LinkedList
     elsif index.zero?
       @head = @head.next
     else
-      previous_node = at(index - 1)
-      next_node = at(index + 1)
-      previous_node.next = next_node
+      remove(index)
     end
+    @size -= 1
+  end
+
+  def remove(index)
+    previous_node = at(index - 1)
+    next_node = at(index + 1)
+    previous_node.next = next_node
   end
 end
